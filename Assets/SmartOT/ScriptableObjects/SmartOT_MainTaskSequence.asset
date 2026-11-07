@@ -16,8 +16,8 @@ MonoBehaviour:
   - taskName: Inspect Patient
     taskDescription: Grab the report pad, bring it to the patient and press E to inspect.
     phase: 1
-  - taskName: Activate Anesthesia Machine
-    taskDescription: Approach the Anesthesia Machine and press E to switch it on.
+  - taskName: Attach Oxygen Mask
+    taskDescription: Grab the oxygen mask and attach it to the patient's mouth.
     phase: 1
   - taskName: Activate Patient Monitor
     taskDescription: Approach the Patient Monitor and press E to switch it on.

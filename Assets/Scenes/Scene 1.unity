@@ -177,6 +177,89 @@ Transform:
   m_Children: []
   m_Father: {fileID: 472285005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &12726417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 12726418}
+  - component: {fileID: 12726419}
+  m_Layer: 0
+  m_Name: o2_attachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &12726418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12726417}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.59146464, y: -0, z: -0, w: 0.80633104}
+  m_LocalPosition: {x: -0.50648, y: 0.38722992, z: -0.38935006}
+  m_LocalScale: {x: 1.4, y: 1.4000001, z: 1.4000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 472285005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &12726419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12726417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9c288aa20513c4aafa0228d4cfd80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Autohand.PlacePoint
+  ignoreMe: 0
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 12726418}
+  placeRadius: 0.1
+  radiusOffset: {x: 0, y: 0, z: 0}
+  parentOnPlace: 1
+  forcePlace: 0
+  forceHandRelease: 1
+  destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 1
+  disablePlacePointOnPlace: 0
+  makePlacedKinematic: 1
+  placedJointLink: {fileID: 0}
+  jointBreakForce: 1000
+  showPlaceRequirements: 1
+  heldPlaceOnly: 0
+  nameCompareType: 0
+  placeNames: []
+  blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  showEvents: 1
+  OnPlace:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRemove:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopHighlight:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &42765112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,6 +380,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7864ded17c1a1be4783f37397cba4da5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 42765117}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7864ded17c1a1be4783f37397cba4da5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 42765120}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7864ded17c1a1be4783f37397cba4da5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 42765119}
   m_SourcePrefab: {fileID: 100100000, guid: 7864ded17c1a1be4783f37397cba4da5, type: 3}
 --- !u!4 &42765113 stripped
 Transform:
@@ -443,6 +532,33 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &42765119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42765114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _debugLogging: 1
+--- !u!114 &42765120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42765114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420231659e5426a48b5e27a515a29eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Equipment.OxygenMaskAttachment
+  _taskId: Attach Oxygen Mask
+  _attachmentPoint: {fileID: 12726419}
 --- !u!1 &62947324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,8 +2262,8 @@ Transform:
   - {fileID: 1007716843}
   - {fileID: 535818520}
   - {fileID: 6030052}
-  - {fileID: 1386401154}
   - {fileID: 524966509}
+  - {fileID: 12726418}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &492392825 stripped
@@ -2566,8 +2682,6 @@ MonoBehaviour:
   - {fileID: 83057740}
   - {fileID: 1842866012}
   - {fileID: 1430472829}
-  _taskListContainer: {fileID: 0}
-  _taskEntryPrefab: {fileID: 0}
   _completedColour: {r: 0.2, g: 0.9, b: 0.2, a: 1}
   _currentColour: {r: 1, g: 0.9, b: 0.2, a: 1}
   _pendingColour: {r: 0.8, g: 0.8, b: 0.8, a: 1}
@@ -2895,6 +3009,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7864ded17c1a1be4783f37397cba4da5, type: 3}
       propertyPath: m_Name
       value: oxygen_mask_3_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7864ded17c1a1be4783f37397cba4da5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4463478099175102657, guid: 7864ded17c1a1be4783f37397cba4da5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3499,12 +3617,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1865350561}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1865350560}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1865350559}
     - targetCorrespondingSourceObject: {fileID: -5707490691097569201, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 381985092}
@@ -4953,37 +5065,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3525479140033381557, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
---- !u!1 &1386401153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1386401154}
-  m_Layer: 0
-  m_Name: o2_mask
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1386401154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386401153}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.494, y: 0.418, z: -0.3971}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 472285005}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387592775
 GameObject:
   m_ObjectHideFlags: 0
@@ -6746,39 +6827,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
   m_PrefabInstance: {fileID: 852982963}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1865350559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865350557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4a0cd4e11004e459dba34e791228d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.ProximityInteractor
-  _inputHandler: {fileID: 708322719}
-  _taskId: Activate Anesthesia Machine
-  _interactionPrompt: Press E to interact
-  _playerTag: Player
---- !u!114 &1865350560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865350557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0d822b2f3e3faa40a67c06acda03384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Equipment.EquipmentInteraction
-  _taskId: Activate Anesthesia Machine
-  _proximityInteractor: {fileID: 0}
-  _inactiveVisual: {fileID: 0}
-  _activeVisual: {fileID: 0}
-  _activationSound: {fileID: 0}
 --- !u!114 &1865350561
 MonoBehaviour:
   m_ObjectHideFlags: 0
