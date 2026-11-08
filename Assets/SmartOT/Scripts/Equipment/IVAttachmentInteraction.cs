@@ -33,7 +33,7 @@ namespace SmartOT.Equipment
         // ── Inspector ─────────────────────────────────────────────────────────
         [Header("Task Linkage")]
         [Tooltip("Must exactly match the TaskData.taskName.")]
-        [SerializeField] private string _taskId = "Attach IV Tube";
+        [SerializeField] private string _taskId = "Take IV cuff from IV pole and attach to patient's left bicep";
 
         [Header("References")]
         [Tooltip("PlacePoint at the patient's IV attachment location.")]

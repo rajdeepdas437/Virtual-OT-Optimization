@@ -44,7 +44,7 @@ namespace SmartOT.Interactions
 
         [Header("Task Linkage")]
         [Tooltip("Must exactly match the TaskData.taskName.")]
-        [SerializeField] private string _taskId = "Record Monitor Readings";
+        [SerializeField] private string _taskId = "Take report pad and record monitor readings";
 
         [Header("Settings")]
         [SerializeField] private string _playerTag = "Player";

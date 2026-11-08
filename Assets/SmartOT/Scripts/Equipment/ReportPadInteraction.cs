@@ -162,13 +162,13 @@ namespace SmartOT.Equipment
             }
 
             _inspectionCompleted = true;
-            Debug.Log("[ReportPadInteraction] Patient inspected! Completing task 'Inspect Patient'.");
+            Debug.Log("[ReportPadInteraction] Patient inspected! Completing task 'Take report pad from table and inspect patient'.");
 
             // Hide the prompt immediately — don't wait for trigger exit.
             patientInspectionZone?.ForceHidePrompt();
 
             // Complete the task and advance the UI.
-            TaskProgressionManager.Instance?.CompleteTask("Inspect Patient");
+            TaskProgressionManager.Instance?.CompleteTask("Take report pad from table and inspect patient");
         }
     }
 }

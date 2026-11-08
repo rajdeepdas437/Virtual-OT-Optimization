@@ -155,6 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6030052}
+  - component: {fileID: 6030053}
   m_Layer: 0
   m_Name: Trocar_laparoscope
   m_TagString: Untagged
@@ -170,13 +171,64 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6030051}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.368, y: 0.433, z: -0.995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.13650145, y: 0.9814231, z: -0.13075653, w: 0.032845158}
+  m_LocalPosition: {x: -0.36487007, y: 0.45023, z: -1.02499}
+  m_LocalScale: {x: 0.00010000003, y: 0.00009999999, z: 0.00010000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 472285005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6030053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9c288aa20513c4aafa0228d4cfd80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Autohand.PlacePoint
+  ignoreMe: 0
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 6030052}
+  placeRadius: 726.65
+  radiusOffset: {x: 0, y: 0, z: 0}
+  parentOnPlace: 1
+  forcePlace: 0
+  forceHandRelease: 1
+  destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 0
+  disablePlacePointOnPlace: 0
+  makePlacedKinematic: 1
+  placedJointLink: {fileID: 0}
+  jointBreakForce: 1000
+  showPlaceRequirements: 1
+  heldPlaceOnly: 0
+  nameCompareType: 0
+  placeNames: []
+  blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  showEvents: 1
+  OnPlace:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRemove:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopHighlight:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &12726417
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +312,11 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &39167671 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+  m_PrefabInstance: {fileID: 161802138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &42765112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -596,8 +653,8 @@ Transform:
   - {fileID: 1578466091}
   - {fileID: 296487990}
   - {fileID: 1178380548}
-  - {fileID: 1770857754}
   - {fileID: 76659100}
+  - {fileID: 39167671}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &69016374
@@ -793,6 +850,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       insertIndex: -1
       addedObject: {fileID: 76659102}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 76659107}
   m_SourcePrefab: {fileID: 100100000, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
 --- !u!4 &76659100 stripped
 Transform:
@@ -847,7 +907,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -917,6 +977,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   lockHandOnGrab: 0
+--- !u!114 &76659107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76659101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296d51e074e21a741b40deb09c7266a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Equipment.TrocarPlacementManager
+  _taskId: Take trocar from table and place it on left side of abdomen
+  _trocarPlacePoints:
+  - {fileID: 6030053}
 --- !u!1 &83057738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,6 +1422,83 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2477511411847689622, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
+--- !u!1001 &161802138
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 62947325}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.46000004
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.19169
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.476
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.68186
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69050235
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.42865002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15233691
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5623693
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -24.874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 49.757
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_Name
+      value: co2_tube_placed
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6cd8a015274e7b844a83b47e82ffa6fa, type: 3}
 --- !u!1001 &188045246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1551,7 +1703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.PatientInspectionZone
   _inputHandler: {fileID: 708322719}
-  _taskId: Inspect Patient
+  _taskId: Take report pad from table and inspect patient
   _playerTag: Player
   _interactionPrompt: Press E to inspect patient
 --- !u!114 &275940087
@@ -1687,15 +1839,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.281
+      value: 1.303
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.45
+      value: 1.378
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5981836
+      value: -1.581
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1731,7 +1883,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_Name
-      value: trocar
+      value: veress needle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2239,6 +2395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472285005}
+  - component: {fileID: 472285006}
   m_Layer: 0
   m_Name: PlacePoints
   m_TagString: Untagged
@@ -2260,12 +2417,27 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1007716843}
-  - {fileID: 535818520}
   - {fileID: 6030052}
   - {fileID: 524966509}
   - {fileID: 12726418}
+  - {fileID: 1955449240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &472285006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472285004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296d51e074e21a741b40deb09c7266a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Equipment.TrocarPlacementManager
+  _taskId: Take trocar from table and place it on left side of abdomen
+  _trocarPlacePoints:
+  - {fileID: 6030053}
 --- !u!1 &492392825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5063223942988036812, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
@@ -2403,37 +2575,6 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &535818519
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 535818520}
-  m_Layer: 0
-  m_Name: Trocar_co2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &535818520
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535818519}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.563, y: 0.433, z: -0.995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 472285005}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &589573876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1598455278820772911, guid: 56ce516feb2f8834fa9bc117a38d0064, type: 3}
@@ -3395,7 +3536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67424364bcb82c49a0990d35a862900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Equipment.IVAttachmentInteraction
-  _taskId: Attach IV Tube
+  _taskId: Take IV cuff from IV pole and attach to patient's left bicep
   _ivAttachmentPoint: {fileID: 1007716844}
 --- !u!1001 &798011140
 PrefabInstance:
@@ -3709,43 +3850,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5715014
+      value: 1.6224315
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6006329
+      value: 1.5789073
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6728182
+      value: -1.6455295
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.53185457
+      value: -0.6454053
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.40208325
+      value: 0.474033
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.73524374
+      value: 0.50153077
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.12196951
+      value: 0.3274319
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -37.377
+      value: -70.106
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -120.599
+      value: -81.973
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 35.505
+      value: 8.932
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -3754,6 +3895,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_Name
       value: laparoscope
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4607,15 +4752,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.53
+      value: 1.5133
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.473
+      value: 1.417
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6074712
+      value: -1.5925
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4652,6 +4797,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       propertyPath: m_Name
       value: trocar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5558,7 +5707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d822b2f3e3faa40a67c06acda03384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Equipment.EquipmentInteraction
-  _taskId: Activate Laparoscopy Tower
+  _taskId: Activate Video Monitor
   _proximityInteractor: {fileID: 0}
   _inactiveVisual: {fileID: 0}
   _activeVisual: {fileID: 0}
@@ -5576,7 +5725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.ProximityInteractor
   _inputHandler: {fileID: 708322719}
-  _taskId: Activate Laparoscopy Tower
+  _taskId: Activate Video Monitor
   _interactionPrompt: Press E to activate Laparoscopy Tower
   _playerTag: Player
 --- !u!114 &1490318129
@@ -5722,6 +5871,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1578466093}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1578466098}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1578466099}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1578466102}
   m_SourcePrefab: {fileID: 100100000, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
 --- !u!4 &1578466091 stripped
 Transform:
@@ -5847,6 +6005,54 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   lockHandOnGrab: 0
+--- !u!114 &1578466098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578466092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f68aca84ef76547995a9e50bd5aafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Equipment.LaparoscopeInsertion
+  _taskId: Take laparoscope from table and place it over the trocar
+  _attachmentPoint: {fileID: 1955449241}
+--- !u!114 &1578466099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578466092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _debugLogging: 1
+--- !u!65 &1578466102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578466092}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5886611, y: 1.52, z: 1}
+  m_Center: {x: -0.14321075, y: -0.28, z: -0.09}
 --- !u!1001 &1641422453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6133,6 +6339,10 @@ PrefabInstance:
       value: XR Player
       objectReference: {fileID: 0}
     - target: {fileID: 874603229497002404, guid: 84f5a593bba8aeb4cad2fcc5d8623d90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 874603229497002404, guid: 84f5a593bba8aeb4cad2fcc5d8623d90, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -6178,211 +6388,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8367231247473855917, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
---- !u!1001 &1770857753
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 62947325}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.00009999999
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.00009999998
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.00009999998
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.169
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.19
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.3397193
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.02342584
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.016995773
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.73450845
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.67798215
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 85.389
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 157.386
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -4.85
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      propertyPath: m_Name
-      value: trocar (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1770857758}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1770857757}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1770857756}
-  m_SourcePrefab: {fileID: 100100000, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
---- !u!4 &1770857754 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-  m_PrefabInstance: {fileID: 1770857753}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1770857755 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
-  m_PrefabInstance: {fileID: 1770857753}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1770857756
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770857755}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 370.32602, y: 1111.172, z: 328.07822}
-  m_Center: {x: 18.34472, y: -531.18976, z: -0.000051893974}
---- !u!54 &1770857757
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770857755}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1770857758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770857755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822bc9090447b9c40833509c4a32e597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Autohand.Grabbable
-  ignoreMe: 0
-  body: {fileID: 0}
-  hightlightMaterial: {fileID: 0}
-  isGrabbable: 1
-  CopySettings: {fileID: 0}
-  grabType: 0
-  handType: 0
-  singleHandOnly: 0
-  instantGrab: 0
-  useGentleGrab: 0
-  maintainGrabOffset: 0
-  parentOnGrab: 1
-  heldNoFriction: 1
-  ignoreWeight: 0
-  allowHeldSwapping: 1
-  throwPower: 1
-  jointBreakForce: 3500
-  showAdvancedSettings: 1
-  makeChildrenGrabbable: 1
-  grabPriorityWeight: 1
-  ignoreReleaseTime: 0.5
-  minHeldDrag: 1.5
-  minHeldAngleDrag: 3
-  maxHeldVelocity: 10
-  heldPositionOffset: {x: 0, y: 0, z: 0}
-  heldRotationOffset: {x: 0, y: 0, z: 0}
-  customGrabJoint: {fileID: 0}
-  jointedBodies: []
-  heldIgnoreColliders: []
-  pullApartBreakOnly: 1
-  showEvents: 1
-  onGrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onRelease:
-    m_PersistentCalls:
-      m_Calls: []
-  onSqueeze:
-    m_PersistentCalls:
-      m_Calls: []
-  onUnsqueeze:
-    m_PersistentCalls:
-      m_Calls: []
-  onHighlight:
-    m_PersistentCalls:
-      m_Calls: []
-  onUnhighlight:
-    m_PersistentCalls:
-      m_Calls: []
-  OnJointBreak:
-    m_PersistentCalls:
-      m_Calls: []
-  lockHandOnGrab: 0
 --- !u!1 &1804879514 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5546747315237514756, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
@@ -6998,6 +7003,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: daa012f6bd2274445b866d4a63b043c8, type: 3}
   m_PrefabInstance: {fileID: 1883467635}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1955449239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955449240}
+  - component: {fileID: 1955449241}
+  m_Layer: 0
+  m_Name: laparo_placePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1955449240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955449239}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.474033, y: 0.50153077, z: 0.3274319, w: -0.6454053}
+  m_LocalPosition: {x: -0.2557385, y: 0.6121372, z: -1.0780195}
+  m_LocalScale: {x: 0.10000001, y: 0.099999994, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 472285005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1955449241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955449239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9c288aa20513c4aafa0228d4cfd80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Autohand.PlacePoint
+  ignoreMe: 0
+  showPlaceSettings: 1
+  startPlaced: {fileID: 0}
+  placedOffset: {fileID: 1955449240}
+  placeRadius: 1.02
+  radiusOffset: {x: 0, y: 0, z: 0}
+  parentOnPlace: 1
+  forcePlace: 0
+  forceHandRelease: 1
+  destroyObjectOnPlace: 0
+  disableRigidbodyOnPlace: 0
+  disableGrabOnPlace: 0
+  disablePlacePointOnPlace: 0
+  makePlacedKinematic: 1
+  placedJointLink: {fileID: 0}
+  jointBreakForce: 1000
+  showPlaceRequirements: 1
+  heldPlaceOnly: 0
+  nameCompareType: 0
+  placeNames: []
+  blacklistNames: []
+  onlyAllows: []
+  dontAllows: []
+  placeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  showEvents: 1
+  OnPlace:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRemove:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHighlight:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopHighlight:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1955974289
 GameObject:
   m_ObjectHideFlags: 0
@@ -7011,6 +7099,7 @@ GameObject:
   - component: {fileID: 1955974292}
   - component: {fileID: 1955974291}
   - component: {fileID: 1955974290}
+  - component: {fileID: 1955974295}
   m_Layer: 5
   m_Name: Main UI
   m_TagString: Untagged
@@ -7122,6 +7211,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1955974295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955974289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9a7d5a7cd49ed4b9abf62d678bb960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.UI.VRHeadFollower
+  _cameraTag: MainCamera
+  _distance: 1.5
+  _verticalOffset: -0.25
+  _canvasWidth: 0.6
+  _canvasHeight: 0.25
+  _smoothSpeed: 8
 --- !u!1 &1973352538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3595058718795243967, guid: 113f61b2283d9524b8c6976a883830f2, type: 3}
@@ -7177,7 +7284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.MonitorReadingsZone
   _inputHandler: {fileID: 708322719}
   _reportPad: {fileID: 2102579239}
-  _taskId: Record Monitor Readings
+  _taskId: Take report pad and record monitor readings
   _playerTag: Player
   _interactionPrompt: Press Use to record monitor readings
 --- !u!135 &1973352548
@@ -8072,7 +8179,6 @@ MeshCollider:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 832575519}
   - {fileID: 1387592776}
   - {fileID: 1718990945}
   - {fileID: 607409919}
@@ -8089,6 +8195,7 @@ SceneRoots:
   - {fileID: 1042533820}
   - {fileID: 1649089447}
   - {fileID: 2000163071}
+  - {fileID: 832575519}
   - {fileID: 2102579233}
   - {fileID: 472285005}
   - {fileID: 708322720}

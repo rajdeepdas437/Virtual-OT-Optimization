@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SmartOT_MainTaskSequence
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Core.TaskSequence
   tasks:
-  - taskName: Inspect Patient
-    taskDescription: Grab the report pad, bring it to the patient and press E to inspect.
+  - taskName: Take report pad from table and inspect patient
+    taskDescription: Grab the report pad from the table, bring it to the patient and press E to inspect.
     phase: 1
   - taskName: Attach Oxygen Mask
     taskDescription: Grab the oxygen mask and attach it to the patient's mouth.
@@ -22,15 +22,21 @@ MonoBehaviour:
   - taskName: Activate Patient Monitor
     taskDescription: Approach the Patient Monitor and press E to switch it on.
     phase: 1
-  - taskName: Attach IV Tube
-    taskDescription: Grab the IV tube and attach it to the patient's IV point.
+  - taskName: Take IV cuff from IV pole and attach to patient's left bicep
+    taskDescription: Grab the IV cuff from the IV pole and attach it to the patient's left bicep.
     phase: 1
-  - taskName: Activate Laparoscopy Tower
-    taskDescription: Approach the Laparoscopy Tower and press E to activate imaging.
+  - taskName: Activate Video Monitor
+    taskDescription: Approach the Video Monitor and press E to activate imaging.
     phase: 2
   - taskName: Switch On Surgical Lights
     taskDescription: Approach the surgical light switch and press E to turn on the lights.
     phase: 2
-  - taskName: Record Monitor Readings
+  - taskName: Take report pad and record monitor readings
     taskDescription: Grab the report pad, approach the patient monitor and press E to record readings.
     phase: 2
+  - taskName: Take trocar from table and place it on left side of abdomen
+    taskDescription: Grab the trocar from the table and place it at the designated abdominal insertion point.
+    phase: 3
+  - taskName: Take laparoscope from table and place it over the trocar
+    taskDescription: Grab the laparoscope from the table and insert it through the trocar port.
+    phase: 3

@@ -45,7 +45,7 @@ namespace SmartOT.Interactions
         [Header("Task Linkage")]
         [Tooltip("Must exactly match the TaskData.taskName for this interaction. " +
                  "Used to gate the prompt to the current active task only.")]
-        [SerializeField] private string _taskId = "Inspect Patient";
+        [SerializeField] private string _taskId = "Take report pad from table and inspect patient";
 
         [Header("Settings")]
         [Tooltip("Tag that identifies the player root. Must match the AutoHand Player root tag.")]

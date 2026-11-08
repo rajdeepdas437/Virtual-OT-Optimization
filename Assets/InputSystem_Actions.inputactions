@@ -464,7 +464,7 @@
                 {
                     "name": "",
                     "id": "578bac48-36d0-41f1-8fd5-a92b3f6870b6",
-                    "path": "<QuestProTouchController>/primaryButton",
+                    "path": "<OculusTouchController>/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
