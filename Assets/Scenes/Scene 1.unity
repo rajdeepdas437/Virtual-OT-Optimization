@@ -7263,12 +7263,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973352538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8eaaf5dd2a9c3a46ac0cd413bafea7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.UI.MonitorZoneUIBridge
-  _monitorZone: {fileID: 0}
+  _monitorZone: {fileID: 1973352547}
   _taskUIManager: {fileID: 0}
 --- !u!114 &1973352547
 MonoBehaviour:
@@ -7277,7 +7277,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973352538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f36cca74acf94f438b6048f4d93215f, type: 3}
   m_Name: 
@@ -7304,10 +7304,9 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Radius: 0.01
-  m_Center: {x: -0.0018110528, y: -0.01, z: -0.00062731374}
+  m_Radius: 1.5
 --- !u!1 &1986994107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1018664272722485354, guid: 892a9d90db342e746ac485e1414d1db0, type: 3}
@@ -8175,6 +8174,92 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4330580999601689338, guid: 56ce516feb2f8834fa9bc117a38d0064, type: 3}
+--- !u!1 &701234891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701234892}
+  - component: {fileID: 701234893}
+  - component: {fileID: 701234894}
+  - component: {fileID: 701234895}
+  m_Layer: 0
+  m_Name: MonitorReadingsZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &701234892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701234891}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.392, y: 1.99, z: -2.199}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &701234893
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701234891}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &701234894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701234891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f36cca74acf94f438b6048f4d93215f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.MonitorReadingsZone
+  _inputHandler: {fileID: 708322719}
+  _reportPad: {fileID: 2102579239}
+  _taskId: Take report pad and record monitor readings
+  _playerTag: Player
+  _interactionPrompt: Press Use to record monitor readings
+--- !u!114 &701234895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701234891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8eaaf5dd2a9c3a46ac0cd413bafea7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.UI.MonitorZoneUIBridge
+  _monitorZone: {fileID: 701234894}
+  _taskUIManager: {fileID: 1955974290}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -8201,4 +8286,5 @@ SceneRoots:
   - {fileID: 708322720}
   - {fileID: 2129216800}
   - {fileID: 1955974294}
+  - {fileID: 701234891}
   - {fileID: 1443910330}

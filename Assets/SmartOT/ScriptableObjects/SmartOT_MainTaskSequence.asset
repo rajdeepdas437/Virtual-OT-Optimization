@@ -31,12 +31,12 @@ MonoBehaviour:
   - taskName: Switch On Surgical Lights
     taskDescription: Approach the surgical light switch and press E to turn on the lights.
     phase: 2
-  - taskName: Take report pad and record monitor readings
-    taskDescription: Grab the report pad, approach the patient monitor and press E to record readings.
-    phase: 2
   - taskName: Take trocar from table and place it on left side of abdomen
     taskDescription: Grab the trocar from the table and place it at the designated abdominal insertion point.
     phase: 3
   - taskName: Take laparoscope from table and place it over the trocar
     taskDescription: Grab the laparoscope from the table and insert it through the trocar port.
+    phase: 3
+  - taskName: Take report pad and record monitor readings
+    taskDescription: Grab the report pad, approach the video monitor and press Use to record readings.
     phase: 3
