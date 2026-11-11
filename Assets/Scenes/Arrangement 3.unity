@@ -738,6 +738,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _enableRecovery: 1
+  _recoveryPoint: {fileID: 0}
+  _outOfBoundsY: -0.5
+  _maxDistance: 10
+  _recoverOnFloor: 1
+  _floorYThreshold: 0.35
+  _floorRecoverDelay: 2
   _debugLogging: 1
 --- !u!114 &42765120
 MonoBehaviour:
@@ -3864,7 +3871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47d787a61d616e94a83caddf40659875, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0260102
+      value: 1.067
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47d787a61d616e94a83caddf40659875, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4061,6 +4068,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _enableRecovery: 1
+  _recoveryPoint: {fileID: 0}
+  _outOfBoundsY: -0.5
+  _maxDistance: 10
+  _recoverOnFloor: 1
+  _floorYThreshold: 0.35
+  _floorRecoverDelay: 2
   _debugLogging: 1
 --- !u!114 &731975614
 MonoBehaviour:
@@ -5258,6 +5272,7 @@ Transform:
   m_Children:
   - {fileID: 438923878}
   - {fileID: 731975608}
+  - {fileID: 1021543850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 108.895, z: 0}
 --- !u!1 &1007716842
@@ -5397,6 +5412,59 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5208879343037863941, guid: 399f760370cb9514daaba919c90da818, type: 3}
+--- !u!1 &1021543849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1021543850}
+  - component: {fileID: 1021543851}
+  m_Layer: 0
+  m_Name: Cuff holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1021543850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021543849}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.519, y: 0.969, z: -1.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 984121405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1021543851
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021543849}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.25, y: 0.09, z: 0.29}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1042533820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7226,7 +7294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.009500027
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7441,6 +7509,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _enableRecovery: 1
+  _recoveryPoint: {fileID: 0}
+  _outOfBoundsY: -0.5
+  _maxDistance: 10
+  _recoverOnFloor: 1
+  _floorYThreshold: 0.35
+  _floorRecoverDelay: 2
   _debugLogging: 1
 --- !u!65 &1578466102
 BoxCollider:
@@ -7461,8 +7536,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5886611, y: 1.52, z: 1}
-  m_Center: {x: -0.14321075, y: -0.28, z: -0.09}
+  m_Size: {x: 0.5886611, y: 3.33, z: 1.01}
+  m_Center: {x: -0.14321075, y: -0.98, z: -0.48}
 --- !u!1001 &1641422453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9822,6 +9897,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _enableRecovery: 1
+  _recoveryPoint: {fileID: 0}
+  _outOfBoundsY: -0.5
+  _maxDistance: 10
+  _recoverOnFloor: 1
+  _floorYThreshold: 0.35
+  _floorRecoverDelay: 2
   _debugLogging: 1
 --- !u!114 &2102579243
 MonoBehaviour:
@@ -10049,6 +10131,9 @@ MonoBehaviour:
   _onArrangement3Selected:
     m_PersistentCalls:
       m_Calls: []
+  _arrangement1SceneName: Arrangement 1
+  _arrangement2SceneName: Arrangement 2
+  _arrangement3SceneName: Arrangement 3
 --- !u!1 &2138310318 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3838572075843529143, guid: 56ce516feb2f8834fa9bc117a38d0064, type: 3}

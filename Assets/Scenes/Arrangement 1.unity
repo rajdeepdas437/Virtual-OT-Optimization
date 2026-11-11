@@ -635,7 +635,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -738,6 +738,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _enableRecovery: 1
+  _recoveryPoint: {fileID: 0}
+  _outOfBoundsY: -0.5
+  _maxDistance: 10
+  _recoverOnFloor: 1
+  _floorYThreshold: 0.35
+  _floorRecoverDelay: 2
   _debugLogging: 1
 --- !u!114 &42765120
 MonoBehaviour:
@@ -990,6 +997,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
       insertIndex: -1
       addedObject: {fileID: 76659107}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 76659108}
   m_SourcePrefab: {fileID: 100100000, guid: 11c9db6fc41707b4a9d59e7545045611, type: 3}
 --- !u!4 &76659100 stripped
 Transform:
@@ -1044,7 +1054,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1129,6 +1139,26 @@ MonoBehaviour:
   _taskId: Take trocar from table and place it on left side of abdomen
   _trocarPlacePoints:
   - {fileID: 6030053}
+--- !u!114 &76659108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76659101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _enableRecovery: 1
+  _recoveryPoint: {fileID: 0}
+  _outOfBoundsY: -0.5
+  _maxDistance: 10
+  _recoverOnFloor: 1
+  _floorYThreshold: 0.35
+  _floorRecoverDelay: 2
+  _debugLogging: 0
 --- !u!1 &83057738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,6 +3016,59 @@ MonoBehaviour:
   OnStopHighlight:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &575915120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575915122}
+  - component: {fileID: 575915121}
+  m_Layer: 0
+  m_Name: Cuff Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &575915121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575915120}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.34, y: 0.13, z: 0.34}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &575915122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575915120}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.312, y: 1.988, z: -2.596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &589573876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1598455278820772911, guid: 56ce516feb2f8834fa9bc117a38d0064, type: 3}
@@ -4003,7 +4086,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -4020,6 +4103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _enableRecovery: 1
+  _recoveryPoint: {fileID: 0}
+  _outOfBoundsY: -0.5
+  _maxDistance: 10
+  _recoverOnFloor: 1
+  _floorYThreshold: 0.35
+  _floorRecoverDelay: 2
   _debugLogging: 1
 --- !u!114 &731975614
 MonoBehaviour:
@@ -7065,7 +7155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.182
+      value: 1.229
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52fd42f63e845474496725ed29976d2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7162,7 +7252,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -7280,6 +7370,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _enableRecovery: 1
+  _recoveryPoint: {fileID: 0}
+  _outOfBoundsY: -0.5
+  _maxDistance: 10
+  _recoverOnFloor: 1
+  _floorYThreshold: 0.35
+  _floorRecoverDelay: 2
   _debugLogging: 1
 --- !u!65 &1578466102
 BoxCollider:
@@ -7300,8 +7397,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5886611, y: 1.52, z: 1}
-  m_Center: {x: -0.14321075, y: -0.28, z: -0.09}
+  m_Size: {x: 0.5886611, y: 3.1, z: 1.01}
+  m_Center: {x: 0.2, y: -1.1, z: -0.66}
 --- !u!1001 &1641422453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9617,6 +9714,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8fa1d7a7b3b0d4997c06ba71572459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmartOT.Interactions.GrabbablePhysicsRestorer
+  _enableRecovery: 1
+  _recoveryPoint: {fileID: 0}
+  _outOfBoundsY: -0.5
+  _maxDistance: 10
+  _recoverOnFloor: 1
+  _floorYThreshold: 0.35
+  _floorRecoverDelay: 2
   _debugLogging: 1
 --- !u!114 &2102579243
 MonoBehaviour:
@@ -9844,6 +9948,9 @@ MonoBehaviour:
   _onArrangement3Selected:
     m_PersistentCalls:
       m_Calls: []
+  _arrangement1SceneName: Arrangement 1
+  _arrangement2SceneName: Arrangement 2
+  _arrangement3SceneName: Arrangement 3
 --- !u!1 &2138310318 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3838572075843529143, guid: 56ce516feb2f8834fa9bc117a38d0064, type: 3}
@@ -9900,3 +10007,4 @@ SceneRoots:
   - {fileID: 1443910330}
   - {fileID: 701234892}
   - {fileID: 2069037097}
+  - {fileID: 575915122}

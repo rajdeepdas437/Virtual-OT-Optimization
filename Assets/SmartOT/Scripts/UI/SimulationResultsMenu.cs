@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using TMPro;
 using SmartOT.Core;
 using SmartOT.Input;
+using UnityEngine.SceneManagement;
 
 namespace SmartOT.UI
 {
@@ -85,6 +86,11 @@ namespace SmartOT.UI
 
         [Tooltip("Invoked when the player clicks Arrangement 3.")]
         [SerializeField] private UnityEvent _onArrangement3Selected = new UnityEvent();
+
+        [Header("Scene Loading")]
+        [SerializeField] private string _arrangement1SceneName = "Scene 1";
+        [SerializeField] private string _arrangement2SceneName = "Scene 2";
+        [SerializeField] private string _arrangement3SceneName = "Scene 3";
 
         // ── State ─────────────────────────────────────────────────────────────
         private float _startTime;
@@ -242,6 +248,8 @@ namespace SmartOT.UI
         {
             Debug.Log("[SimulationResultsMenu] Player selected Arrangement 1.");
             _onArrangement1Selected?.Invoke();
+            if(!string.IsNullOrEmpty(_arrangement1SceneName));
+                SceneManager.LoadScene(_arrangement1SceneName);
         }
 
         /// <summary>
@@ -251,6 +259,8 @@ namespace SmartOT.UI
         {
             Debug.Log("[SimulationResultsMenu] Player selected Arrangement 2.");
             _onArrangement2Selected?.Invoke();
+            if(!string.IsNullOrEmpty(_arrangement2SceneName));
+                SceneManager.LoadScene(_arrangement2SceneName);
         }
 
         /// <summary>
@@ -260,6 +270,8 @@ namespace SmartOT.UI
         {
             Debug.Log("[SimulationResultsMenu] Player selected Arrangement 3.");
             _onArrangement3Selected?.Invoke();
+            if(!string.IsNullOrEmpty(_arrangement3SceneName));
+                SceneManager.LoadScene(_arrangement3SceneName);
         }
 
         // ── Helpers ───────────────────────────────────────────────────────────
